@@ -84,7 +84,7 @@
     <!-- Write HTML just like a web page -->
     <div id="wrapper">
       <div id="c1">
-        <img src="http://localhost/log/assets/img/logo.png" height="60px">
+        <img src="<?= base_url() ?>assets/img/logo.png" height="60px">
       </div>
       <div id="c2"></div>
       <div id="c3">
