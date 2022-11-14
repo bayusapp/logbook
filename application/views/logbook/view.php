@@ -37,20 +37,27 @@
     }
 
     .header {
-      font-family: century-gothic, sans-serif;
-      font-size: 35.5pt;
+      font-family: "Century Gothic";
+      font-size: 31.6pt;
       color: #B01513;
     }
 
     .sub-header {
-      font-family: century-gothic, sans-serif;
-      font-size: 13.8pt;
+      font-family: "Century Gothic";
+      font-size: 12.7pt;
       color: black;
     }
 
     @page {
       size: A4
     }
+
+    /* @media print and (color) {
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    } */
 
     .title {
       font-size: 20px;
@@ -84,7 +91,7 @@
     <!-- Write HTML just like a web page -->
     <div id="wrapper">
       <div id="c1">
-        <img src="<?= base_url() ?>assets/img/logo.png" height="60px">
+        <img src="<?= base_url() ?>assets/img/logo.png" height="58px">
       </div>
       <div id="c2"></div>
       <div id="c3">
@@ -101,7 +108,7 @@
       Penggunaan Ruang Lab
       <br>
     </div>
-    <div class="sub-header">Fakultas Ilmu Terapan | Universitas Telkom | Semester Ganjil Tahun Ajaran 2022 / 2023</div>
+    <div class="sub-header" style="margin-top: 5px;">Fakultas Ilmu Terapan | Universitas Telkom | Semester Ganjil Tahun Ajaran 2022 / 2023</div>
     <br>
     <table class="table">
       <thead style="text-align: center;">
@@ -151,7 +158,7 @@
     </table>
     <br><br>
     Mengetahui,<br>
-    Ka. Ur. Laboratorium/Bengkel/Studio FIT<br><br><br><br>
+    Ka. Ur. Laboratorium/Bengkel/Studio FIT<br><br><br><br><br>
     Devie Ryana Suchendra, S.T., M.T.
   </section>
   <script src="http://webapplayers.com/inspinia_admin-v2.9.4/js/bootstrap.js"></script>

@@ -20,6 +20,11 @@ class Logbook extends CI_Controller
     view('logbook/view', $data);
   }
 
+  public function formBAST()
+  {
+    view('logbook/bast');
+  }
+
   public function formUploadJadwal()
   {
     view('logbook/formUploadJadwal');
