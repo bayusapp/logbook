@@ -135,7 +135,7 @@
             <div class="sub-header">
               Fakultas Ilmu Terapan | Universitas Telkom | 2022
               <br><br>
-              Hari / Tanggal : <?= $hari ?> / 14 November 2022
+              Hari / Tanggal : <?= $hari ?> / <?= cekHari($hari) ?>
             </div>
             <br>
             <table class="table">
