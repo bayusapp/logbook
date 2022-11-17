@@ -80,102 +80,186 @@ if (!function_exists('cekHari')) {
     $tanggal = date('Y-m-d');
     $ambilHari = ambilHari($tanggal);
     if ($ambilHari == 'Sun') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
       }
     } elseif ($ambilHari == 'Mon') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
       }
     } elseif ($ambilHari == 'Tue') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 1 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 1 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
       }
     } elseif ($ambilHari == 'Wed') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 2 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 1 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 2 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 1 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
       }
     } elseif ($ambilHari == 'Thu') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 3 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 2 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '- 1 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 3 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 2 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '- 1 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 0 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 1 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
       }
     } elseif ($ambilHari == 'Fri') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 7 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 8 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 7 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 8 days')));
       }
     } elseif ($ambilHari == 'Sat') {
-      if ($hari == 'SENIN' || $hari == 'Senin') {
+      if ($hari == 'SENIN') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
-      } elseif ($hari == 'SELASA' || $hari == 'Selasa') {
+      } elseif ($hari == 'SELASA') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
-      } elseif ($hari == 'RABU' || $hari == 'Rabu') {
+      } elseif ($hari == 'RABU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
-      } elseif ($hari == 'KAMIS' || $hari == 'Kamis') {
+      } elseif ($hari == 'KAMIS') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
-      } elseif ($hari == 'JUMAT' || $hari == 'Jumat') {
+      } elseif ($hari == 'JUMAT') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
-      } elseif ($hari == 'SABTU' || $hari == 'Sabtu') {
+      } elseif ($hari == 'SABTU') {
         return tanggalIndonesia(date('Y-m-d', strtotime($tanggal . '+ 7 days')));
+      } elseif ($hari == 'Senin') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 2 days')));
+      } elseif ($hari == 'Selasa') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 3 days')));
+      } elseif ($hari == 'Rabu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 4 days')));
+      } elseif ($hari == 'Kamis') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 5 days')));
+      } elseif ($hari == 'Jumat') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 6 days')));
+      } elseif ($hari == 'Sabtu') {
+        return tanggalIndonesiaa(date('Y-m-d', strtotime($tanggal . '+ 7 days')));
       }
     }
   }
@@ -188,6 +272,18 @@ if (!function_exists('tanggalIndonesia')) {
     $pecahTanggal = explode('-', $ubahTanggal);
     $tanggal = $pecahTanggal[2];
     $bulan = bulanpanjang($pecahTanggal[1]);
+    $tahun = $pecahTanggal[0];
+    return $tanggal . ' ' . $bulan . ' ' . $tahun;
+  }
+}
+
+if (!function_exists('tanggalIndonesiaa')) {
+  function tanggalIndonesiaa($tanggal)
+  {
+    $ubahTanggal = gmdate($tanggal, time() + 60 * 60 * 8);
+    $pecahTanggal = explode('-', $ubahTanggal);
+    $tanggal = $pecahTanggal[2];
+    $bulan = bulanpanjangg($pecahTanggal[1]);
     $tahun = $pecahTanggal[0];
     return $tanggal . ' ' . $bulan . ' ' . $tahun;
   }
@@ -232,6 +328,50 @@ if (!function_exists('bulanPanjang')) {
         break;
       case 12:
         return 'DESEMBER';
+        break;
+    }
+  }
+}
+
+if (!function_exists('bulanPanjangg')) {
+  function bulanPanjangg($bulan)
+  {
+    switch ($bulan) {
+      case 1:
+        return 'Januari';
+        break;
+      case 2:
+        return 'Februari';
+        break;
+      case 3:
+        return 'Maret';
+        break;
+      case 4:
+        return 'April';
+        break;
+      case 5:
+        return 'Mei';
+        break;
+      case 6:
+        return 'Juni';
+        break;
+      case 7:
+        return 'Juli';
+        break;
+      case 8:
+        return 'Agustus';
+        break;
+      case 9:
+        return 'September';
+        break;
+      case 10:
+        return 'Oktober';
+        break;
+      case 11:
+        return 'November';
+        break;
+      case 12:
+        return 'Desember';
         break;
     }
   }
