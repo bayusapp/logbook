@@ -87,80 +87,88 @@
 <body class="A4">
   <!-- Each sheet element should have the class "sheet" -->
   <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
-  <section class="sheet padding-10mm">
-    <!-- Write HTML just like a web page -->
-    <div id="wrapper">
-      <div id="c1">
-        <img src="<?= base_url() ?>assets/img/logo.png" height="58px">
+  <?php
+  foreach ($lab as $l) {
+    $nama_lab = $this->db->get_where('ruangan', array('kode_ruangan' => $l))->row()->nama_ruangan;
+    $jadwal   = $this->m->ambilJadwal($l)->result();
+  ?>
+    <section class="sheet padding-10mm">
+      <!-- Write HTML just like a web page -->
+      <div id="wrapper">
+        <div id="c1">
+          <img src="<?= base_url() ?>assets/img/logo.png" height="58px">
+        </div>
+        <div id="c2"></div>
+        <div id="c3">
+          <table style="font-size: 12px; font-weight: bold;" width="100%">
+            <tr>
+              <td style="padding: 10px 4px; text-align: center"><?= $nama_lab ?></td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div id="c2"></div>
-      <div id="c3">
-        <table style="font-size: 12px; font-weight: bold;" width="100%">
-          <tr>
-            <td style="padding: 10px 4px; text-align: center"><?= $nama_lab ?></td>
-          </tr>
-        </table>
+      <div class="header">
+        Log Book
+        <br>
+        Penggunaan Ruang Lab
+        <br>
       </div>
-    </div>
-    <div class="header">
-      Log Book
+      <div class="sub-header" style="margin-top: 5px;">Fakultas Ilmu Terapan | Universitas Telkom | Semester Ganjil Tahun Ajaran 2022 / 2023</div>
       <br>
-      Penggunaan Ruang Lab
-      <br>
-    </div>
-    <div class="sub-header" style="margin-top: 5px;">Fakultas Ilmu Terapan | Universitas Telkom | Semester Ganjil Tahun Ajaran 2022 / 2023</div>
-    <br>
-    <table class="table">
-      <thead style="text-align: center;">
-        <tr>
-          <td>No</td>
-          <td colspan="2">Hari/Tanggal</td>
-          <td>Nama Dosen /<br>Koor Asprak</td>
-          <td>Keperluan</td>
-          <td>Jam<br>Penggunaan</td>
-          <td>Paraf</td>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        $i = 0;
-        foreach ($jadwal as $j) {
-          $i++;
-        ?>
+      <table class="table">
+        <thead style="text-align: center;">
           <tr>
-            <td style="text-align: center;" width="4%"><?= $i ?></td>
-            <td style="text-align: center;" width="8%"><?= $j->hari ?></td>
-            <td style="text-align: center;" width="17%"><?= cekHari($j->hari) ?></td>
-            <td style="text-align: center;" width="13%"><?= $j->dosen ?></td>
-            <td><?= $j->nama_mk ?></td>
-            <td style="text-align: center;" width="12%"><?= $j->shift ?></td>
-            <td width="9%"></td>
+            <td>No</td>
+            <td colspan="2">Hari/Tanggal</td>
+            <td>Nama Dosen /<br>Koor Asprak</td>
+            <td>Keperluan</td>
+            <td>Jam<br>Penggunaan</td>
+            <td>Paraf</td>
           </tr>
+        </thead>
+        <tbody>
           <?php
-        }
-        if ($i < 31) {
-          for ($j = $i + 1; $j <= 30; $j++) {
+          $i = 0;
+          foreach ($jadwal as $j) {
+            $i++;
           ?>
             <tr>
-              <td style="text-align: center;"><?= $j ?></td>
-              <td style="text-align: center;" width="8%"></td>
-              <td style="text-align: center;" width="17%"></td>
-              <td style="text-align: center;" width="13%"></td>
-              <td></td>
-              <td style="text-align: center;" width="12%"></td>
+              <td style="text-align: center;" width="4%"><?= $i ?></td>
+              <td style="text-align: center;" width="8%"><?= $j->hari ?></td>
+              <td style="text-align: center;" width="17%"><?= cekHari($j->hari) ?></td>
+              <td style="text-align: center;" width="13%"><?= $j->dosen ?></td>
+              <td><?= $j->nama_mk ?></td>
+              <td style="text-align: center;" width="12%"><?= $j->shift ?></td>
               <td width="9%"></td>
             </tr>
-        <?php
+            <?php
           }
-        }
-        ?>
-      </tbody>
-    </table>
-    <br><br>
-    Mengetahui,<br>
-    Ka. Ur. Laboratorium/Bengkel/Studio FIT<br><br><br><br><br>
-    Devie Ryana Suchendra, S.T., M.T.
-  </section>
+          if ($i < 31) {
+            for ($j = $i + 1; $j <= 30; $j++) {
+            ?>
+              <tr>
+                <td style="text-align: center;"><?= $j ?></td>
+                <td style="text-align: center;" width="8%"></td>
+                <td style="text-align: center;" width="17%"></td>
+                <td style="text-align: center;" width="13%"></td>
+                <td></td>
+                <td style="text-align: center;" width="12%"></td>
+                <td width="9%"></td>
+              </tr>
+          <?php
+            }
+          }
+          ?>
+        </tbody>
+      </table>
+      <br><br>
+      Mengetahui,<br>
+      Ka. Ur. Laboratorium/Bengkel/Studio FIT<br><br><br><br><br>
+      Devie Ryana Suchendra, S.T., M.T.
+    </section>
+  <?php
+  }
+  ?>
   <script src="http://webapplayers.com/inspinia_admin-v2.9.4/js/bootstrap.js"></script>
 </body>
 

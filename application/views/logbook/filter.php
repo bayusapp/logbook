@@ -26,10 +26,10 @@
             <div class="card-body">
               <h4 class="mb-3 f-w-400">Log Book Ruangan Lab</h4>
               <form method="post" action="<?= base_url('Logbook/formLogbook') ?>">
-                <select name="lab" class="js-example-basic-multiple col-sm-12" multiple="multiple">
+                <select name="lab[]" class="js-example-basic-multiple col-sm-12" multiple="multiple">
                   <?php
                   foreach ($lab as $l) {
-                    echo '<option value="' . $l->kode_ruangan . '">' . $l->nama_ruangan . '</option>';
+                    echo '<option value="' . $l->kode_ruangan . '">' . $l->kode_ruangan . '</option>';
                   }
                   ?>
                 </select>
@@ -46,13 +46,10 @@
           <div class="col-md-12">
             <div class="card-body">
               <h4 class="mb-3 f-w-400">BAST Kunci</h4>
-              <form method="post" action="<?= base_url('Logbook/formLogbook') ?>">
-                <select class="js-example-basic-multiple col-sm-12" multiple="multiple">
-                  <?php
-                  foreach ($lab as $l) {
-                    echo '<option value="' . $l->kode_ruangan . '">' . $l->nama_ruangan . '</option>';
-                  }
-                  ?>
+              <form method="post" action="<?= base_url('Logbook/formBAST') ?>">
+                <select name="lantai" class="js-example-basic-multiple col-sm-12">
+                  <option value="1">Lantai 1 & Lantai 4</option>
+                  <option value="2">Lantai 2</option>
                 </select>
                 <button type="submit" class="btn btn-block btn-primary mb-4">Print</button>
               </form>

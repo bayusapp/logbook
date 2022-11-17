@@ -12,17 +12,14 @@ class Logbook extends CI_Controller
 
   public function formLogbook()
   {
-    $lab = input('lab');
-    $ambilNamaLab = $this->db->get_where('ruangan', array('kode_ruangan' => $lab))->row();
-    $ambilJadwal = $this->m->ambilJadwal($lab)->result();
-    $data['nama_lab'] = $ambilNamaLab->nama_ruangan;
-    $data['jadwal']   = $ambilJadwal;
+    $data['lab']  = input('lab');
     view('logbook/view', $data);
   }
 
   public function formBAST()
   {
-    view('logbook/bast');
+    $data['lantai'] = input('lantai');
+    view('logbook/bast', $data);
   }
 
   public function formUploadJadwal()
