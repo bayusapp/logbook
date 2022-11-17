@@ -165,7 +165,7 @@
                   <td width="13%"><?= $d->shift ?></td>
                   <td width="8%"></td>
                   <td width="8%"></td>
-                  <td width="8%" style="background-color: #bfbfbf;">Nih</td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
                   <td width="8%" style="background-color: #bfbfbf;"></td>
                   <td width="20%" style="background-color: #bfbfbf;"></td>
                 </tr>
