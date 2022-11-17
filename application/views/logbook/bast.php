@@ -86,65 +86,267 @@
 <body class="A4">
   <!-- Each sheet element should have the class "sheet" -->
   <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
-  <section class="sheet padding-10mm">
-    <!-- Write HTML just like a web page -->
-    <div id="wrapper">
-      <div id="c1">
-        <img src="<?= base_url() ?>assets/img/logo.png" height="55px">
-      </div>
-      <div id="c2"></div>
-      <div id="c3"></div>
-    </div>
-    <div class="header">
-      Berita Acara
-      <br>
-      Serah Terima Kunci Lab
-      <br>
-    </div>
-    <div class="sub-header">
-      Fakultas Ilmu Terapan | Universitas Telkom | 2022
-      <br><br>
-      Hari / Tanggal : Senin / 14 November 2022
-    </div>
-    <br>
-    <table class="table">
-      <thead style="text-align: center;">
-        <tr style="font-size: 17pt;">
-          <td colspan="7">PENGAMBILAN KUNCI</td>
-          <td colspan="3" style="background-color: #bfbfbf;">PENGEMBALIAN KUNCI</td>
-        </tr>
-        <tr>
-          <td>No</td>
-          <td colspan="2">Ruang</td>
-          <td>Kode<br>Dosen</td>
-          <td>Jam Kuliah</td>
-          <td>Jam<br>Ambil</td>
-          <td>Paraf<br>Dosen</td>
-          <td style="background-color: #bfbfbf;">Jam<br>Kembali</td>
-          <td style="background-color: #bfbfbf;">Paraf<br>Admin<br>Lab</td>
-          <td style="background-color: #bfbfbf;">Keterangan</td>
-        </tr>
-      </thead>
-      <tbody style="text-align: center;">
-        <tr>
-          <td width="4%">1</td>
-          <td width="4%">B5</td>
-          <td width="18%">Interactive Multimedia</td>
-          <td width="9%">IMM</td>
-          <td width="13%">06:30 - 09:30</td>
-          <td width="8%"></td>
-          <td width="8%"></td>
-          <td width="8%"></td>
-          <td width="8%"></td>
-          <td width="20%"></td>
-        </tr>
-      </tbody>
-    </table>
-    <br><br>
-    Mengetahui,<br>
-    Ka. Ur. Laboratorium/Bengkel/Studio FIT<br><br><br><br><br>
-    Devie Ryana Suchendra, S.T., M.T.
-  </section>
+  <?php
+  for ($i = 1; $i <= 6; $i++) {
+    switch ($i) {
+      case 1:
+        $hari = 'Senin';
+        break;
+      case 2:
+        $hari = 'Selasa';
+        break;
+      case 3:
+        $hari = 'Rabu';
+        break;
+      case 4:
+        $hari = 'Kamis';
+        break;
+      case 5:
+        $hari = 'Jumat';
+        break;
+      case 6:
+        $hari = 'Sabtu';
+        break;
+    }
+    $data = $this->m->ambilBAST($lantai, $i)->result();
+    $jumlah = count($data);
+    if ($jumlah > 38) {
+  ?>
+      <?php
+      $no = 1;
+      foreach ($data as $d) {
+        if ($no == 1) {
+      ?>
+          <section class="sheet padding-10mm">
+            <!-- Write HTML just like a web page -->
+            <div id="wrapper">
+              <div id="c1">
+                <img src="<?= base_url() ?>assets/img/logo.png" height="55px">
+              </div>
+              <div id="c2"></div>
+              <div id="c3"></div>
+            </div>
+            <div class="header">
+              Berita Acara
+              <br>
+              Serah Terima Kunci Lab
+              <br>
+            </div>
+            <div class="sub-header">
+              Fakultas Ilmu Terapan | Universitas Telkom | 2022
+              <br><br>
+              Hari / Tanggal : <?= $hari ?> / 14 November 2022
+            </div>
+            <br>
+            <table class="table">
+              <thead style="text-align: center;">
+                <tr style="font-size: 17pt;">
+                  <td colspan="7">PENGAMBILAN KUNCI</td>
+                  <td colspan="3" style="background-color: #bfbfbf;">PENGEMBALIAN KUNCI</td>
+                </tr>
+                <tr>
+                  <td>No</td>
+                  <td colspan="2">Ruang</td>
+                  <td>Kode<br>Dosen</td>
+                  <td>Jam Kuliah</td>
+                  <td>Jam<br>Ambil</td>
+                  <td>Paraf<br>Dosen</td>
+                  <td style="background-color: #bfbfbf;">Jam<br>Kembali</td>
+                  <td style="background-color: #bfbfbf;">Paraf<br>Admin<br>Lab</td>
+                  <td style="background-color: #bfbfbf;">Keterangan</td>
+                </tr>
+              </thead>
+              <tbody style="text-align: center;">
+                <tr>
+                  <td width="4%"><?= $no++ ?></td>
+                  <td width="4%"><?= $d->kode_ruangan ?></td>
+                  <td width="19%"><?= $d->nama_ruangan ?></td>
+                  <td width="8%"><?= $d->dosen ?></td>
+                  <td width="13%"><?= $d->shift ?></td>
+                  <td width="8%"></td>
+                  <td width="8%"></td>
+                  <td width="8%" style="background-color: #bfbfbf;">Nih</td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="20%" style="background-color: #bfbfbf;"></td>
+                </tr>
+              <?php
+            } elseif ($no > 1 && $no < 39) {
+              ?>
+                <tr>
+                  <td width="4%"><?= $no++ ?></td>
+                  <td width="4%"><?= $d->kode_ruangan ?></td>
+                  <td width="19%"><?= $d->nama_ruangan ?></td>
+                  <td width="8%"><?= $d->dosen ?></td>
+                  <td width="13%"><?= $d->shift ?></td>
+                  <td width="8%"></td>
+                  <td width="8%"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="20%" style="background-color: #bfbfbf;"></td>
+                </tr>
+              <?php
+            } elseif ($no == 39) {
+              ?>
+              </tbody>
+            </table>
+          </section>
+          <section class="sheet padding-10mm">
+            <table class="table">
+              <tbody style="text-align: center;">
+                <tr>
+                  <td width="4%"><?= $no++ ?></td>
+                  <td width="4%"><?= $d->kode_ruangan ?></td>
+                  <td width="19%"><?= $d->nama_ruangan ?></td>
+                  <td width="8%"><?= $d->dosen ?></td>
+                  <td width="13%"><?= $d->shift ?></td>
+                  <td width="8%"></td>
+                  <td width="8%"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="20%" style="background-color: #bfbfbf;"></td>
+                </tr>
+              <?php
+            } elseif ($no > 39 && $no < $jumlah) {
+              ?>
+                <tr>
+                  <td width="4%"><?= $no++ ?></td>
+                  <td width="4%"><?= $d->kode_ruangan ?></td>
+                  <td width="19%"><?= $d->nama_ruangan ?></td>
+                  <td width="8%"><?= $d->dosen ?></td>
+                  <td width="13%"><?= $d->shift ?></td>
+                  <td width="8%"></td>
+                  <td width="8%"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="20%" style="background-color: #bfbfbf;"></td>
+                </tr>
+              <?php
+            } elseif ($no == $jumlah) {
+              ?>
+                <tr>
+                  <td width="4%"><?= $no++ ?></td>
+                  <td width="4%"><?= $d->kode_ruangan ?></td>
+                  <td width="19%"><?= $d->nama_ruangan ?></td>
+                  <td width="8%"><?= $d->dosen ?></td>
+                  <td width="13%"><?= $d->shift ?></td>
+                  <td width="8%"></td>
+                  <td width="8%"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="8%" style="background-color: #bfbfbf;"></td>
+                  <td width="20%" style="background-color: #bfbfbf;"></td>
+                </tr>
+                <?php
+                for ($x = $no; $x <= 60; $x++) {
+                ?>
+                  <tr>
+                    <td width="4%"><?= $no++ ?></td>
+                    <td width="4%"></td>
+                    <td width="19%"></td>
+                    <td width="8%"></td>
+                    <td width="13%"></td>
+                    <td width="8%"></td>
+                    <td width="8%"></td>
+                    <td width="8%" style="background-color: #bfbfbf;"></td>
+                    <td width="8%" style="background-color: #bfbfbf;"></td>
+                    <td width="20%" style="background-color: #bfbfbf;"></td>
+                  </tr>
+                <?php
+                }
+                ?>
+              </tbody>
+            </table>
+          </section>
+        <?php
+            }
+        ?>
+      <?php
+      }
+    } else {
+      ?>
+      <section class="sheet padding-10mm">
+        <!-- Write HTML just like a web page -->
+        <div id="wrapper">
+          <div id="c1">
+            <img src="<?= base_url() ?>assets/img/logo.png" height="55px">
+          </div>
+          <div id="c2"></div>
+          <div id="c3"></div>
+        </div>
+        <div class="header">
+          Berita Acara
+          <br>
+          Serah Terima Kunci Lab
+          <br>
+        </div>
+        <div class="sub-header">
+          Fakultas Ilmu Terapan | Universitas Telkom | 2022
+          <br><br>
+          Hari / Tanggal : <?= $hari ?> / 14 November 2022
+        </div>
+        <br>
+        <table class="table">
+          <thead style="text-align: center;">
+            <tr style="font-size: 17pt;">
+              <td colspan="7">PENGAMBILAN KUNCI</td>
+              <td colspan="3" style="background-color: #bfbfbf;">PENGEMBALIAN KUNCI</td>
+            </tr>
+            <tr>
+              <td>No</td>
+              <td colspan="2">Ruang</td>
+              <td>Kode<br>Dosen</td>
+              <td>Jam Kuliah</td>
+              <td>Jam<br>Ambil</td>
+              <td>Paraf<br>Dosen</td>
+              <td style="background-color: #bfbfbf;">Jam<br>Kembali</td>
+              <td style="background-color: #bfbfbf;">Paraf<br>Admin<br>Lab</td>
+              <td style="background-color: #bfbfbf;">Keterangan</td>
+            </tr>
+          </thead>
+          <tbody style="text-align: center;">
+            <?php
+            $no = 1;
+            foreach ($data as $d) {
+            ?>
+              <tr>
+                <td width="4%"><?= $no++ ?></td>
+                <td width="4%"><?= $d->kode_ruangan ?></td>
+                <td width="19%"><?= $d->nama_ruangan ?></td>
+                <td width="8%"><?= $d->dosen ?></td>
+                <td width="13%"><?= $d->shift ?></td>
+                <td width="8%"></td>
+                <td width="8%"></td>
+                <td width="8%" style="background-color: #bfbfbf;"></td>
+                <td width="8%" style="background-color: #bfbfbf;"></td>
+                <td width="20%" style="background-color: #bfbfbf;"></td>
+              </tr>
+            <?php
+            }
+            for ($sisa = $no; $sisa <= 38; $sisa++) {
+            ?>
+              <tr>
+                <td width="4%"><?= $sisa ?></td>
+                <td width="4%"></td>
+                <td width="18%"></td>
+                <td width="9%"></td>
+                <td width="13%"></td>
+                <td width="8%"></td>
+                <td width="8%"></td>
+                <td width="8%" style="background-color: #bfbfbf;"></td>
+                <td width="8%" style="background-color: #bfbfbf;"></td>
+                <td width="20%" style="background-color: #bfbfbf;"></td>
+              </tr>
+            <?php
+            }
+            ?>
+          </tbody>
+        </table>
+      </section>
+    <?php
+    }
+    ?>
+  <?php
+  }
+  ?>
   <script src="http://webapplayers.com/inspinia_admin-v2.9.4/js/bootstrap.js"></script>
 </body>
 
