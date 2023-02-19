@@ -52,3 +52,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'Logbook';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['upload']  = 'Logbook/formUploadJadwal';
+$route['(:any)']  = 'Logbook/$1';

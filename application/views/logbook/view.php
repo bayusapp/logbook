@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Create a report base on paper size using CSS</title>
+  <title>Log Book Penggunaan Ruang Lab</title>
+  <link rel="icon" href="<?= base_url() ?>assets/images/favicon.ico" type="image/x-icon">
   <!-- Normalize or reset CSS with your favorite library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   <!-- Load paper.css for happy printing -->
@@ -89,6 +90,7 @@
   <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
   <?php
   foreach ($lab as $l) {
+    $kode_lab = $this->db->get_where('ruangan', array('kode_ruangan' => $l))->row()->kode_ruangan;
     $nama_lab = $this->db->get_where('ruangan', array('kode_ruangan' => $l))->row()->nama_ruangan;
     $jadwal   = $this->m->ambilJadwal($l)->result();
   ?>
@@ -102,7 +104,7 @@
         <div id="c3">
           <table style="font-size: 12px; font-weight: bold;" width="100%">
             <tr>
-              <td style="padding: 10px 4px; text-align: center"><?= $nama_lab ?></td>
+              <td style="padding: 10px 4px; text-align: center"><?= $kode_lab . ' - ' . $nama_lab ?></td>
             </tr>
           </table>
         </div>
@@ -113,7 +115,7 @@
         Penggunaan Ruang Lab
         <br>
       </div>
-      <div class="sub-header" style="margin-top: 5px;">Fakultas Ilmu Terapan | Universitas Telkom | Semester Ganjil Tahun Ajaran 2022 / 2023</div>
+      <div class="sub-header" style="margin-top: 5px;">Fakultas Ilmu Terapan | Universitas Telkom | Semester Genap Tahun Ajaran 2022 / 2023</div>
       <br>
       <table class="table">
         <thead style="text-align: center;">

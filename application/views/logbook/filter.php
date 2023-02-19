@@ -25,7 +25,7 @@
           <div class="col-md-12">
             <div class="card-body">
               <h4 class="mb-3 f-w-400">Log Book Ruangan Lab</h4>
-              <form method="post" action="<?= base_url('Logbook/formLogbook') ?>">
+              <form method="post" action="<?= base_url('formLogbook') ?>">
                 <select name="lab[]" class="js-example-basic-multiple col-sm-12" multiple="multiple">
                   <?php
                   foreach ($lab as $l) {
@@ -46,7 +46,7 @@
           <div class="col-md-12">
             <div class="card-body">
               <h4 class="mb-3 f-w-400">BAST Kunci</h4>
-              <form method="post" action="<?= base_url('Logbook/formBAST') ?>">
+              <form method="post" action="<?= base_url('formBAST') ?>">
                 <select name="lantai" class="js-example-basic-multiple col-sm-12">
                   <option value="1">Lantai 1 & Lantai 4</option>
                   <option value="2">Lantai 2</option>

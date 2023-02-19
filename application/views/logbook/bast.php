@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Create a report base on paper size using CSS</title>
+  <title>Berita Acara Serah Terima Kunci</title>
+  <link rel="icon" href="<?= base_url() ?>assets/images/favicon.ico" type="image/x-icon">
   <!-- Normalize or reset CSS with your favorite library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   <!-- Load paper.css for happy printing -->
@@ -133,7 +134,7 @@
               <br>
             </div>
             <div class="sub-header">
-              Fakultas Ilmu Terapan | Universitas Telkom | 2022
+              Fakultas Ilmu Terapan | Universitas Telkom | <?= date('Y') ?>
               <br><br>
               Hari / Tanggal : <?= $hari ?> / <?= cekHari($hari) ?>
             </div>
@@ -236,7 +237,7 @@
                   <td width="20%" style="background-color: #bfbfbf;"></td>
                 </tr>
                 <?php
-                for ($x = $no; $x <= 60; $x++) {
+                for ($x = $no; $x <= 70; $x++) {
                 ?>
                   <tr>
                     <td width="4%"><?= $no++ ?></td>
@@ -279,7 +280,7 @@
           <br>
         </div>
         <div class="sub-header">
-          Fakultas Ilmu Terapan | Universitas Telkom | 2022
+          Fakultas Ilmu Terapan | Universitas Telkom | 2023
           <br><br>
           Hari / Tanggal : <?= $hari ?> / <?= cekHari($hari) ?>
         </div>
